@@ -48,8 +48,6 @@ int main(int argc, char const *argv[]) {
         
     Utente utente;
     Lista l;
-        
-    printf("Ciao\n");
 
     return 0;
 }
