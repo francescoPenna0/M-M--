@@ -1,5 +1,5 @@
 //Simulatore ad eventi di Sistemi a Coda di tipo MMInfinito - Ver. 1.0 
-// Copyright (C) 2019 Alfonso Esposito, Francesco Penna
+//Copyright (C) 2019 Alfonso Esposito, Francesco Penna
 
 #include <stdio.h>
 #include <stdlib.h>
