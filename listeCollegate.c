@@ -102,7 +102,7 @@ Lista* ricercaOrd(Lista *l, int d) {
       break;
     l = &(*l)->next;
   }
-  return l;
+  return l;   
 }
 
 void insOrd(Lista* l, int d) {
@@ -120,18 +120,18 @@ int elim1(Lista* pl, int d) {
 }
 
 int massimo(Lista l) {
-  int max;
-  if (l == NULL) {
-    exit(-1);
-  }
-  // inizializzo il massimo al primo elemento
-  max = l->dato;
-  l = l->next;
-  // scorro la coda di l
-  while (l) {
-    if (l->dato > max)
-      max = l->dato;
-    l = l->next;
-  }
-  return max;
+	int max;
+	if (l == NULL) {
+		exit(-1);
+	}
+	// inizializzo il massimo al primo elemento
+	max = l->dato;
+	l = l->next;
+	// scorro la coda di l
+	while (l) {
+		if (l->dato > max)
+		max = l->dato;
+		l = l->next;
+	}
+	return max;
 }
