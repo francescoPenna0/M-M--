@@ -21,11 +21,11 @@ unsigned int  x;  // contatore del numero di utenti attualmente in servizio
 unsigned int  q;  // contatore del numero di utenti attualmente in coda
 unsigned int  k;  // contatore del numero di utenti attualmente nel sistema
 
-double accumula_tx; // accumula il tempo trascorso in servizio double accumula_tq; // accumula il tempo trascorso in coda double accumula_tk; // accumula il tempo trascorso nel sistema
+double accumula_tx; // accumula il tempo trascorso in servizio double accumula_tq
 double accumula_tq; // accumula il tempo trascorso in coda
 double accumula_tk; // accumula il tempo trascorso nel sistema
 
-double accumula_x; // accumula il numero di utenti attualmente in servizio double accumula_q; // accumula il numero di utenti attualmente in coda double accumula_k; // accumula il numero di utenti attualmente nel sistema
+double accumula_x; // accumula il numero di utenti attualmente in servizio double accumula_q
 double accumula_q;  // accumula il numero di utenti attualmente in coda
 double accumula_k;  // accumula il numero di utenti attualmente nel sistema
 
