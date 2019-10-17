@@ -37,8 +37,8 @@ typedef struct nodo {
 typedef Nodo* Lista;
 
 void nuovaLista(Lista* l);
-void insTesta(Lista* l,Utente utente)
-void inizializzaSimulazionePacchetto(Lista* l,Utente utente,accumula_tx);
+void insTesta(Lista* l,Utente utente);
+void inizializzaSimulazionePacchetto(Lista* l,Utente utente, double accumula_tx);
 void UtentiInIngresso(Utente utente);
 void UtentiInUscita(Utente utente, int *x, int *k,double *nUtUscitiServ, double *nUtUscitiSist);
 void simulazione();
