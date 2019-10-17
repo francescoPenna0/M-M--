@@ -29,10 +29,10 @@ typedef struct{
     double  tk; //tempo trascorso nel sistema
 } Utente;
 
-typedef struct nodo{
+typedef struct nodo {
     Utente dato;
     struct nodo* next;
-}Nodo;
+} Nodo;
 
 typedef Nodo* Lista;
 
