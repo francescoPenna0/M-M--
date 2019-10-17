@@ -6,7 +6,7 @@ void nuovaLista(Lista *pl) {
 }
 
 int rnd_int(int min, int max) {
-  return min + rand() % (max - min + 1);
+    return min + rand() % (max - min + 1);
 }
 
 void generaListaRandom(Lista *pl, int n) {
