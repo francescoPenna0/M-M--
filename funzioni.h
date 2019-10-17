@@ -24,7 +24,7 @@ double  tSimulazione;       // accumula il tempo di simulazione
 double  tServitoreLibero;   // accumula il tempo in cui il servitore è libero
 
 
-typedef struct {
+typedef struct utente {
     double  tx; // tempo di servizio assegnato
     double  tk; //tempo trascorso nel sistema
 } Utente;
