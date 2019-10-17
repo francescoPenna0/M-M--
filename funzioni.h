@@ -7,7 +7,7 @@ unsigned int  k;  // contatore del numero di utenti attualmente nel sistema
 double accumula_tx; // accumula il tempo trascorso in servizio
 double accumula_tk; // accumula il tempo trascorso nel sistema
 
-double accumula_x; // accumula il numero di utenti attualmente in servizio double 
+double accumula_x;  // accumula il numero di utenti attualmente in servizio double 
 double accumula_k;  // accumula il numero di utenti attualmente nel sistema
 
 double  nUtEntratiServ;  // contatore del numero di utenti entrati in servizio
@@ -19,12 +19,12 @@ double  nUtUscitiSist;   // accumula il numero di utenti usciti nel sistema
 double  nUtentiGenerati; // contatore del numero di utenti generati
 
 
-double  tInterarrivo;  // tempo trascorso fra due arrivi consecutivi di utenti
-double  tSimulazione;  // accumula il tempo di simulazione
-double  tServitoreLibero;  // accumula il tempo in cui il servitore è libero
+double  tInterarrivo;       // tempo trascorso fra due arrivi consecutivi di utenti
+double  tSimulazione;       // accumula il tempo di simulazione
+double  tServitoreLibero;   // accumula il tempo in cui il servitore è libero
 
 
-typedef struct{
+typedef struct {
     double  tx; // tempo di servizio assegnato
     double  tk; //tempo trascorso nel sistema
 } Utente;
