@@ -15,11 +15,12 @@ int main(int argc, char const *argv[])
     double input;       // numero utenti inseriti da terminale
     Utente utente;
     Lista l;
-    nuovaLista(&l);
     FILE *ft;
 
+    nuovaLista(&l);
+
     printf("Inserire il numero di utenti desiderato per avviare la simulazione:\n");
-    scanf("%f", &input);
+    scanf("%lf", &input);
     printf("\n");
 
     ft = fopen("M/M/inf.txt", "a");
@@ -31,7 +32,7 @@ int main(int argc, char const *argv[])
 
     while (NUTENTI != input)
     {
-        printf("nascita pacchetto numero %d", NUTENTI);
+        printf("nascita pacchetto numero %f", NUTENTI);
         utente.pacchetto_nato = poisson(lambda, MU, k); //nascita pacchetto e passaggio allo stato 1
         utente.tempo = 1 / MU;                          //tempo trascorso complessivamente nel sistema
         insTesta(&l, utente);

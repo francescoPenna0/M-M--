@@ -4,13 +4,6 @@
 
 unsigned int x;     // contatore del numero di utenti attualmente in servizio
 unsigned int k = 0; // stato del sistema
-typedef enum disponibilità
-{
-    disponibile,
-    non_disponibile
-};
-
-enum dispobilità servitore;
 
 double lambda;        // tasso di nascita degli utenti
 double MU;            // tasso di morte degli utenti
