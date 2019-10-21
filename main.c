@@ -40,8 +40,7 @@ int main(int argc, char const *argv[])
         x++;
         servitori = pow(servitori, 2);
 
-        fprintf(ft,"Il numero di utenti è %f\nIl numero di servitori è: %f\nIl tempo trascorso nel sistema è: 
-        %f\n",NUTENTI, servitori, l->dato.tempo);
+        fprintf(ft,"Il numero di utenti è %f\nIl numero di servitori è: %f\nIl tempo trascorso nel sistema è: %f\n",NUTENTI, servitori, l->dato.tempo);
         fprintf(ft, "*****************************************************************************************\n");
         elimTesta(&l);
     }

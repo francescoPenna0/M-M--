@@ -31,7 +31,7 @@ int fact(int n)
 double poisson(double mu, double lambda, int k)
 {
     double nascita;
-    nascita = ((pow(lambda / mu, k)) / fact(k)) * pow(e, -(lambda / mu));
+    nascita = ((pow(lambda / mu, k)) / fact(k)) * pow(2.71, -(lambda / mu));
     k++;
     return nascita;
 }
