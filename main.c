@@ -11,6 +11,11 @@
 int main(int argc, char const *argv[])
 {
 
+    //int x = 0;     // contatore del numero di utenti attualmente in servizio
+    double k = 0;
+    double lambda = 1.0;        // tasso di nascita degli utenti
+    double MU = 1.0;            // tasso di morte degli utenti
+    double servitori = 1; // numero di servitori nel sistema
     double NUTENTI = 1; // numero di utenti del sistema
     double input;       // numero utenti inseriti da terminale
     Utente utente;
@@ -33,12 +38,11 @@ int main(int argc, char const *argv[])
     while (NUTENTI != input)
     {
         printf("nascita pacchetto numero %f", NUTENTI);
-        utente.pacchetto_nato = poisson(lambda, MU, k); //nascita pacchetto e passaggio allo stato 1
+        utente.pacchetto_nato = poisson(lambda, MU, &k); //nascita pacchetto e passaggio allo stato 1
         utente.tempo = 1 / MU;                          //tempo trascorso complessivamente nel sistema
         insTesta(&l, utente);
         MU *= k;
         NUTENTI++;
-        x++;
         servitori = pow(servitori, 2);
 
         fprintf(ft,"Il numero di utenti è %f\nIl numero di servitori è: %f\nIl tempo trascorso nel sistema è: %f\n",NUTENTI, servitori, l->dato.tempo);

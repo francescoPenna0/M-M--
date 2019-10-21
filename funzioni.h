@@ -2,13 +2,6 @@
 #include <stdio.h>
 #include <math.h>
 
-unsigned int x;     // contatore del numero di utenti attualmente in servizio
-unsigned int k = 0; // stato del sistema
-
-double lambda;        // tasso di nascita degli utenti
-double MU;            // tasso di morte degli utenti
-double servitori = 1; // numero di servitori nel sistema
-
 typedef struct utente
 {
     double pacchetto_nato; // nascita pacchetto
@@ -27,4 +20,4 @@ void nuovaLista(Lista *l);
 void insTesta(Lista *l, Utente utente);
 void elimTesta(Lista *l);
 int fact(int n);
-double poisson(double mu, double lambda, int k);
+double poisson(double mu, double lambda, double *stato);
