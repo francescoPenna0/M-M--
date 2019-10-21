@@ -1,29 +1,37 @@
 #include "funzioni.h"
 
-
-void nuovaLista(Lista* l) {
-
+void nuovaLista(Lista *l)
+{
     *l = NULL;
-
 }
 
-void insTesta(Lista* l, Utente utente) {
-
-    Nodo* aux = (Nodo*)malloc(sizeof(Nodo));
+void insTesta(Lista *l, Utente utente)
+{
+    Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
     aux->dato = utente;
     aux->next = *l;
     *l = aux;
-
 }
 
-void inizializzaSimulazionePacchetto(Lista* l, Utente utente, double accumula_tx) {
-
-    (*l)->dato.tk = 0; // inizializzo tempo trascorso nel sistema. Dato che è appena arrivato inizializzo a 0
-    (*l)->dato.tx = 0; // inizializzo tempo di servizio a 0
-    (*l)->dato.tx = (*l)->dato.tx+accumula_tx; // il tempo di servizio assegnato è dato dal tempo di arrivo del pacchetto + tempo complessivo di servizio da inizio simulazione
-    
+void elimTesta(Lista *l)
+{
+    Nodo *aux = *l;
+    *l = (*l)->next;
+    free(aux);
 }
 
-void UtentiInIngresso(Utente utente){
-    
+int fact(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * fact(n - 1);
+}
+
+double poisson(double mu, double lambda, int k)
+{
+    double nascita;
+    nascita = ((pow(lambda / mu, k)) / fact(k)) * pow(e, -(lambda / mu));
+    k++;
+    return nascita;
 }

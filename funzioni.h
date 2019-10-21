@@ -1,43 +1,37 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
-unsigned int  x;  // contatore del numero di utenti attualmente in servizio
-unsigned int  k;  // contatore del numero di utenti attualmente nel sistema
+unsigned int x;     // contatore del numero di utenti attualmente in servizio
+unsigned int k = 0; // stato del sistema
+typedef enum disponibilità
+{
+    disponibile,
+    non_disponibile
+};
 
-typedef enum disponibilita {disponibile, non_disponibile};
+enum dispobilità servitore;
 
-enum disponibilita servitore; //il servitore è sempre disponibile, se non lo è mandiamo errore
+double lambda;        // tasso di nascita degli utenti
+double MU;            // tasso di morte degli utenti
+double servitori = 1; // numero di servitori nel sistema
 
-double  nUtEntratiServ;  // contatore del numero di utenti entrati in servizio
-double  nUtEntratiSist;  // accumula il numero di utenti entrati nel sistema
-
-double  nUtUscitiServ;   // contatore del numero di utenti usciti dal servizio
-double  nUtUscitiSist;   // accumula il numero di utenti usciti nel sistema  
-
-double  nUtentiGenerati; // contatore del numero di utenti generati
-
-double  tInterarrivo;       // tempo trascorso fra due arrivi consecutivi di utenti
-double  tSimulazione;       // accumula il tempo di simulazione
-double  tServitoreLibero;   // accumula il tempo in cui il servitore è libero
-
-
-typedef struct utente {
-    double  tx; // tempo di servizio assegnato
-    double  tk; //tempo trascorso nel sistema
+typedef struct utente
+{
+    double pacchetto_nato; // nascita pacchetto
+    double tempo;
 } Utente;
 
-typedef struct nodo {
+typedef struct nodo
+{
     Utente dato;
-    struct nodo* next;
+    struct nodo *next;
 } Nodo;
 
-typedef Nodo* Lista;
+typedef Nodo *Lista;
 
-void nuovaLista(Lista* l);
-void insTesta(Lista* l,Utente utente);
-void gestioneUtente(Lista *l, Utente utente, int x, int k, int servitore);
-void inizializzaSimulazionePacchetto(Lista* l,Utente utente, double accumula_tx);
-void UtentiInIngresso(Utente utente);
-void UtentiInUscita(Utente utente, int *x, int *k,double *nUtUscitiServ, double *nUtUscitiSist);
-void simulazione();
-void stampaRisultati();
+void nuovaLista(Lista *l);
+void insTesta(Lista *l, Utente utente);
+void elimTesta(Lista *l);
+int fact(int n);
+double poisson(double mu, double lambda, int k);
