@@ -1,16 +1,40 @@
 Il numero di utenti è 1
 Il numero di servitori è: 1
-Il tempo trascorso nel sistema è: 0.083333
+Il tempo trascorso nel sistema è: 1.000000
 *******************************************
 Il numero di utenti è 2
 Il numero di servitori è: 4
-Il tempo trascorso nel sistema è: 0.083333
+Il tempo trascorso nel sistema è: 1.000000
 *******************************************
 Il numero di utenti è 3
 Il numero di servitori è: 9
-Il tempo trascorso nel sistema è: 0.083333
+Il tempo trascorso nel sistema è: 1.000000
 *******************************************
 Il numero di utenti è 4
 Il numero di servitori è: 16
-Il tempo trascorso nel sistema è: 0.083333
+Il tempo trascorso nel sistema è: 1.000000
+*******************************************
+Il numero di utenti è 5
+Il numero di servitori è: 25
+Il tempo trascorso nel sistema è: 1.000000
+*******************************************
+Il numero di utenti è 6
+Il numero di servitori è: 36
+Il tempo trascorso nel sistema è: 1.000000
+*******************************************
+Il numero di utenti è 7
+Il numero di servitori è: 49
+Il tempo trascorso nel sistema è: 1.000000
+*******************************************
+Il numero di utenti è 8
+Il numero di servitori è: 64
+Il tempo trascorso nel sistema è: 1.000000
+*******************************************
+Il numero di utenti è 9
+Il numero di servitori è: 81
+Il tempo trascorso nel sistema è: 1.000000
+*******************************************
+Il numero di utenti è 10
+Il numero di servitori è: 100
+Il tempo trascorso nel sistema è: 1.000000
 *******************************************

@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
     printf("Lambda--> ");
     scanf("%lf", &lambda);
 
-    while (NUTENTI != input)
+    while (NUTENTI != (input + 1))
     {
         printf("Nascita pacchetto numero %.0f\n", NUTENTI);
 
