@@ -23,8 +23,8 @@ int main(int argc, char const *argv[])
     FILE *ft;
 
     nuovaLista(&l);
-
-    if ((ft = fopen("M/M/inf.txt", "a")) == NULL)
+    ft = fopen("M/M/inf.txt", "wt");
+    if (ft == NULL)
     {
         printf("Errore nell'apertura del file\n");
         exit(-1);
