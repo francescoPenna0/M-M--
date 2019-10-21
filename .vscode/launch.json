@@ -4,15 +4,16 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/m_m_infinito",
+            "program": "usr/francescopenna/Documenti/M-M--/m_m_infinito",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": ["mminfinito.txt"],
             "externalConsole": false,
             "MIMode": "lldb"
         }

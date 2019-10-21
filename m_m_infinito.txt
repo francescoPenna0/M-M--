@@ -1,0 +1,16 @@
+Il numero di utenti è 1
+Il numero di servitori è: 1
+Il tempo trascorso nel sistema è: 0.083333
+*******************************************
+Il numero di utenti è 2
+Il numero di servitori è: 4
+Il tempo trascorso nel sistema è: 0.083333
+*******************************************
+Il numero di utenti è 3
+Il numero di servitori è: 9
+Il tempo trascorso nel sistema è: 0.083333
+*******************************************
+Il numero di utenti è 4
+Il numero di servitori è: 16
+Il tempo trascorso nel sistema è: 0.083333
+*******************************************
