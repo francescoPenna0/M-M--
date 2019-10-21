@@ -28,10 +28,10 @@ int fact(int n)
         return n * fact(n - 1);
 }
 
-double poisson(double mu, double lambda, double *stato)
+double poisson(double mu, double lambda, double stato)
 {
     double nascita;
-    nascita = ((pow(lambda / mu, *stato)) / fact(stato)) * pow(2.71, -(lambda / mu));
-    *stato++;
+    nascita = ((pow(lambda / mu, stato)) / fact(stato)) * pow(2.71, -(lambda / mu));
+    stato++;
     return nascita;
 }

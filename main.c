@@ -24,21 +24,19 @@ int main(int argc, char const *argv[])
 
     nuovaLista(&l);
 
-    printf("Inserire il numero di utenti desiderato per avviare la simulazione:\n");
-    scanf("%lf", &input);
-    printf("\n");
-
-    ft = fopen("M/M/inf.txt", "a");
-    if (ft == NULL)
+    if ((ft = fopen("M/M/inf.txt", "a")) == NULL)
     {
-        printf("errore nell'apertura del file\n");
+        printf("Errore nell'apertura del file\n");
         exit(-1);
     }
+
+    printf("Inserire il numero di utenti desiderato per avviare la simulazione:\n");
+    scanf("%lf", &input);
 
     while (NUTENTI != input)
     {
         printf("nascita pacchetto numero %f", NUTENTI);
-        utente.pacchetto_nato = poisson(lambda, MU, &k); //nascita pacchetto e passaggio allo stato 1
+        utente.pacchetto_nato = poisson(lambda, MU, k); //nascita pacchetto e passaggio allo stato 1
         utente.tempo = 1 / MU;                          //tempo trascorso complessivamente nel sistema
         insTesta(&l, utente);
         MU *= k;
