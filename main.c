@@ -11,13 +11,13 @@
 int main(int argc, char const *argv[])
 {
 
-    //int x = 0;          // contatore del numero di utenti attualmente in servizio
+    //int x = 0;                                                    // contatore del numero di utenti attualmente in servizio
     double k = 0;
-    double lambda;        // tasso di nascita degli utenti
-    double MU;            // tasso di morte degli utenti
-    double servitori = 1; // numero di servitori nel sistema
-    double NUTENTI = 1;   // numero di utenti del sistema
-    double input;         // numero utenti inseriti da terminale
+    double lambda;                                                  // tasso di nascita degli utenti
+    double MU;                                                      // tasso di morte degli utenti
+    double servitori = 1;                                           // numero di servitori nel sistema
+    double NUTENTI = 1;                                             // numero di utenti del sistema
+    double input;                                                   // numero utenti inseriti da terminale
     Utente utente;
     Lista l;
     FILE *ft;
@@ -44,23 +44,23 @@ int main(int argc, char const *argv[])
     {
         printf("Nascita pacchetto numero %.0f\n", NUTENTI);
 
-        utente.pacchetto_nato = poisson(lambda, MU, k); //nascita pacchetto 
+        utente.pacchetto_nato = poisson(lambda, MU, k);             //nascita pacchetto 
         printf("Processo di nascita: %f\n", utente.pacchetto_nato);
-        k++;                                            //con relativo passaggio allo stato 1
-        utente.tempo = 1 / MU;                          //tempo trascorso complessivamente nel sistema
+        k++;                                                        //con relativo passaggio allo stato 1
+        utente.tempo = 1 / MU;                                      //tempo trascorso complessivamente nel sistema
 
-        insTesta(&l, utente);                           //un utente entra in testa alla coda per essere servito
+        insTesta(&l, utente);                                       //un utente entra in testa alla coda per essere servito
 
-        MU *= k;                                        //aggiornamento di mu dato da mu = mu * k
+        MU *= k;                                                    //aggiornamento di mu dato da mu = mu * k
         servitori = pow(NUTENTI, 2);
 
         fprintf(ft,"Il numero di utenti è %.0f\nIl numero di servitori è: %.0f\nIl tempo trascorso nel sistema è: %f\n", NUTENTI, servitori, l->dato.tempo);
         fprintf(ft, "*******************************************\n");
 
-        elimTesta(&l);                                  //dopo essere stato servito viene eliminato
-        k--;                                            //si ritorna allo stato k di 0 vista la morte
+        elimTesta(&l);                                              //dopo essere stato servito viene eliminato
+        k--;                                                        //si ritorna allo stato k di 0 vista la morte
        
-        NUTENTI++;                                      //incremento il counter avendo servito un utente
+        NUTENTI++;                                                  //incremento il counter avendo servito un utente
 
     }
 
