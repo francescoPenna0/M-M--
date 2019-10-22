@@ -35,3 +35,19 @@ double poisson(double mu, double lambda, double stato)
     stato++;
     return nascita;
 }
+
+double calcolo_servitori(double NUTENTI, double servitori) {
+
+    if (NUTENTI == 1)
+        {
+            servitori = 1;
+            
+        } else {
+        
+            servitori = NUTENTI * log(NUTENTI);
+
+    }
+
+    return servitori;
+
+}

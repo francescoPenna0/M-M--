@@ -21,3 +21,4 @@ void insTesta(Lista *l, Utente utente);
 void elimTesta(Lista *l);
 int fact(int n);
 double poisson(double mu, double lambda, double stato);
+double calcolo_servitori(double NUTENTI, double servitori);
