@@ -30,24 +30,26 @@ int fact(int n)
 
 double poisson(double mu, double lambda, double stato)
 {
+
     double nascita;
+
     nascita = ((pow(lambda / mu, stato)) / fact(stato)) * pow(2.71, -(lambda / mu));
-    stato++;
+
     return nascita;
 }
 
-double calcolo_servitori(double NUTENTI, double servitori) {
+double calcolo_servitori(double NUTENTI, double servitori)
+{
 
     if (NUTENTI == 1)
-        {
-            servitori = 1;
-            
-        } else {
-        
-            servitori = NUTENTI * log(NUTENTI);
+    {
+        servitori = 1;
+    }
+    else
+    {
 
+        servitori = NUTENTI * log(NUTENTI);
     }
 
     return servitori;
-
 }
