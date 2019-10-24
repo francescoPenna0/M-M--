@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <time.h>
+#include <unistd.h>
 #include <pthread.h>
 
 #include "funzioni.h"
@@ -13,13 +13,12 @@
 int main(int argc, char const *argv[])
 {
 
-    double k = 0;
-    double lambda;        // tasso di nascita degli utenti
-    double MU;            // tasso di morte degli utenti
-    double servitori = 1; // numero di servitori nel sistema
-    double NUTENTI = 1;   // numero di utenti del sistema
-    double input;         // numero utenti inseriti da terminale
-    double tempo_iniziale, tempo_finale, tempo_medio;
+    int NUTENTI = 1;  // numero di utenti del sistema
+    int input_utenti; // numero utenti inseriti da terminale
+    //double k = 0;
+    double lambda; // tasso di nascita degli utenti
+    double MU;     // tasso di morte degli utenti
+
     Utente utente;
     Lista l;
     FILE *ft;
@@ -34,7 +33,10 @@ int main(int argc, char const *argv[])
     }
 
     printf("Inserire il numero di utenti desiderato per avviare la simulazione:\n");
-    scanf("%lf", &input);
+    scanf("%d", &input_utenti);
+
+    threadpool generatori = thpool_init(3);               //3 che generano
+    threadpool servitori = thpool_init(input_utenti + 1); //uno per ogni utente + 1 sempre disponibile
 
     printf("Inserire i valori di mu e lambda:\n");
     printf("Mu-->");
@@ -42,31 +44,30 @@ int main(int argc, char const *argv[])
     printf("Lambda--> ");
     scanf("%lf", &lambda);
 
-    while (NUTENTI != (input + 1))
+    NUTENTI += NUTENTI;
+    utente.NUTENTI = NUTENTI;
+    utente.lambda = lambda;
+    utente.mu = MU;
+    insTesta(&l, utente);
+
+    while (NUTENTI != (input_utenti + 1))
     {
-        k++;     //con relativo passaggio allo stato 1
-        MU *= k; //aggiornamento di mu dato da mu = mu * k
 
-        utente.pacchetto_nato = poisson(lambda, MU, k); //nascita pacchetto
+        thpool_wait(generatori);
+        thpool_add_work(servitori, (void *)serviUtenti, (void *)(&l));
 
-        insTesta(&l, utente); //un utente entra in testa alla coda per essere servito
+        utente.NUTENTI = NUTENTI;
+        utente.lambda = lambda;
+        utente.mu = MU;
+        insTesta(&l, utente);
 
-        l->dato.tempo = 1 / MU; //tempo trascorso complessivamente nel sistema
-
-        servitori = calcolo_servitori(NUTENTI, servitori);
-
-        fprintf(ft, "Il numero di utenti è %.0f\nIl numero di servitori è: %.0f\nIl tempo trascorso nel sistema è: %f\nLa probabilità di rimanere nello stato è: %f\n", NUTENTI, servitori, l->dato.tempo, l->dato.pacchetto_nato);
-        fprintf(ft, "***************************************************\n");
-
-        elimTesta(&l); //dopo essere stato servito viene eliminato
-        k--;           //si ritorna allo stato k di 0 vista la morte
-
-        NUTENTI++; //incremento il counter avendo servito un utente
+        thpool_add_work(generatori, (void *)generaUtenti, (void *)(&l));
     }
 
     fclose(ft);
 
+    thpool_destroy(generatori);
+    thpool_destroy(servitori);
+
     return 0;
 }
-//USARE FUNZIONE SLEEP O USLEEP O PRENDERE TEMPO CON UN CICLO PER SIMULARE
-//IL SERVIZIO DEL SERVITORE PRIMA DI SPUTARLO PER CRONOMETRARLO

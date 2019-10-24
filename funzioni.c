@@ -39,18 +39,19 @@ double poisson(double mu, double lambda, double stato)
     return nascita;
 }
 
-double calcolo_servitori(double NUTENTI, double servitori)
+void generaUtenti(int NUTENTI)
+{
+    NUTENTI++;
+}
+
+void serviUtenti(Lista *l)
 {
 
-    if (NUTENTI == 1)
-    {
-        servitori = 1;
-    }
-    else
-    {
+    useconds_t servizio = (1 / (*l)->dato.mu);
 
-        servitori = NUTENTI * log(NUTENTI);
-    }
+    usleep(servizio); //il pacchetto viene servito
 
-    return servitori;
+    printf("Tempo nel sistema = tempo di servizio: %.3f\n", 1.0 / (*l)->dato.mu);
+
+    elimTesta(l);
 }
