@@ -1,4 +1,5 @@
 #include "funzioni.h"
+#include "thpool.h"
 
 void nuovaLista(Lista *l)
 {
