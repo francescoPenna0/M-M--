@@ -1,0 +1,50 @@
+Utente generato n° 1
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 2
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 3
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 4
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 5
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 6
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 7
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 8
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 9
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
+Utente generato n° 10
+P(k) definita dalla legge di poisson è : 0.607
+tempo medio speso nel pacchetto: 0.500
+Il numero medio di pacchetti presenti nel sistema allo stato k è : 0.500
+************************************************************************
