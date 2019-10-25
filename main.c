@@ -47,7 +47,7 @@ int main(int argc, char const *argv[])
 
     for (utente.n_utenti = 1; utente.n_utenti < input_utenti + 1; utente.n_utenti++)
     {
-        start = clock(); // Calcolo tempo di nascita del pacchetto fino alla sua morte. DURATA VITA PACCHETTO
+        start = clock();                                         // Calcolo tempo di nascita del pacchetto fino alla sua morte.
                                                  
         fprintf(ft, "Utente generato n° %d\n", utente.n_utenti); // GENERO UTENTE
 
@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
         fprintf(ft, "Il numero medio di pacchetti presenti nel sistema allo stato k è : %.3f\n", utente.lambda / utente.mu); 
         fprintf(ft, "************************************************************************\n");
 
-        end = clock(); // TERMINA VITA DEL PACCHETTO
+        end = clock();                                           // TERMINA VITA DEL PACCHETTO
 
         double tempo = ((double)(end - start)) / CLOCKS_PER_SEC; // calcolo la durata totale della vita del pacchetto
         tempoTot = tempo + tempoTot;
@@ -74,7 +74,7 @@ int main(int argc, char const *argv[])
 
     end1 = clock(); //TERMINA LA SIMULAZIONE
 
-    fclose(ft); // CHIUDO IL FILE
+    fclose(ft);     // CHIUDO IL FILE
 
     tempo_simulazione = ((double)(end1 - start1)) / CLOCKS_PER_SEC; // CALCOLO DURATA DELLA SIMULAZIONE
 
@@ -82,7 +82,7 @@ int main(int argc, char const *argv[])
     printf("*                        Results from M/M/inf simulation                             *\n");
     printf("**************************************************************************************\n");
     printf("*                                        INPUT:                                      *\n");
-    printf("*                        Numero di pacchetti serviti = %u cust                       *\n", input_utenti);
+    printf("*                        Numero di pacchetti serviti = %d cust                       *\n", input_utenti);
     printf("*                        Lambda scelto               = %.2f                          *\n", utente.lambda);
     printf("*                        Mu scelto                   = %.2f                          *\n", utente.mu);                           
     printf("*       Stato inziale: Coda vuota, stato K = 0, Sistema vuoto, Servitore disponibile *\n");
