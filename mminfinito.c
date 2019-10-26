@@ -43,7 +43,7 @@ void serviUtenti(Lista *l,FILE *ft)
 {
     
     (*l)->dato.tempo_servizio = 1.0/(*l)->dato.mu;
-    fprintf(ft,"tempo medio speso nel pacchetto: %.3f\n",(*l)->dato.tempo_servizio);
+    fprintf(ft,"Tempo di servizio: %.3f\n",(*l)->dato.tempo_servizio);
 
 }
 
