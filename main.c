@@ -21,22 +21,22 @@ int main(int argc, char const *argv[])
     clock_t start, start1;
     clock_t end, end1;
 
-    Utente utente; // struttura dati utente
-    Lista l;       // lista che vuole simulare il sistema
-    FILE *ft;      // file dove salvare i dati del processo
+    Utente utente;            // struttura dati utente
+    Lista l;                  // lista che vuole simulare il sistema
+    FILE *ft;                 // file dove salvare i dati del processo
 
-    nuovaLista(&l); // inizializzo lista
+    nuovaLista(&l);           // inizializzo lista
     
     printf("Inserire il numero di utenti desiderato per avviare la simulazione:\n"); //richiedo inserimento N Utenti
     scanf("%d", &input_utenti);
 
-    printf("Inserire i valori di mu e lambda:\n"); // richiedo inserimento parametri lambda e mu
+    printf("Inserire i valori di mu e lambda:\n");                                   // richiedo inserimento parametri lambda e mu
     printf("Mu-->");
     scanf("%f", &utente.mu);
     printf("Lambda--> ");
     scanf("%f", &utente.lambda);
 
-    ft = fopen("m_m_infinito.txt", "at"); // apro file in modalità di scrittura
+    ft = fopen("m_m_infinito.txt", "wt");                                            // apro file in modalità di scrittura
     if (ft == NULL)
     {
         printf("Errore nell'apertura del file\n");
@@ -72,9 +72,9 @@ int main(int argc, char const *argv[])
 
     }
 
-    end1 = clock(); //TERMINA LA SIMULAZIONE
+    end1 = clock();                                                 //TERMINA LA SIMULAZIONE
 
-    fclose(ft);     // CHIUDO IL FILE
+    fclose(ft);                                                     // CHIUDO IL FILE
 
     tempo_simulazione = ((double)(end1 - start1)) / CLOCKS_PER_SEC; // CALCOLO DURATA DELLA SIMULAZIONE
 
