@@ -78,22 +78,22 @@ int main(int argc, char const *argv[])
 
     tempo_simulazione = ((double)(end_simulazione - start_simluzione)) / CLOCKS_PER_SEC; // CALCOLO DURATA DELLA SIMULAZIONE
 
-    printf("**************************************STATISTICS********************************************\n");
-    printf("*                        Results from M/M/inf simulation                                   *\n");
+    printf("**************************************RISULTATI*********************************************\n");
+    printf("*                        Risultati per una simulazione m/m/inf                             *\n");
     printf("********************************************************************************************\n");
     printf("*                                        INPUT:                                            *\n");
-    printf("*                        Numero di pacchetti serviti = %d cust                             *\n", input_utenti);
+    printf("*                        Numero di pacchetti serviti = %d cust                            *\n", input_utenti);
     printf("*                        Lambda scelto               = %.2f                               *\n", utente.lambda);
     printf("*                        Mu scelto                   = %.2f                               *\n", utente.mu);                           
     printf("*       Stato inziale: Coda vuota, stato K = 0, Sistema vuoto, Servitore disponibile       *\n");
     printf("********************************************************************************************\n");
     printf("*                                       OUTPUTS:                                           *\n");
-    printf("*                        Tempo tatole simulato           = %3.4f sec                      *\n", tempo_simulazione);
+    printf("*                        Tempo tatole simulato                = %3.4f sec                 *\n", tempo_simulazione);
     printf("*                        Tempo medio tra gli arrivi           = %lf sec               *\n", avarage);
     printf("*                        P(k) definita dalla legge di poisson = %.3f                      *\n", nascita);
     printf("*                        Tempo medio di servizio              = %lf sec               *\n", 1.0 / utente.mu);
-    printf("*                        Server utilization                   = %lf %%                *\n", 100.0 * (utente.lambda / utente.mu));
-    printf("*                        Tempo medio di permanenza in coda: 0.000                          *\n");
+    printf("*                        Utilizzo del server                  = %lf %%                *\n", 100.0 * (utente.lambda / utente.mu));
+    printf("*                        Tempo medio di permanenza in coda    = 0.000 sec                  *\n");
     printf("*                   Numero medio di pacchetti presenti nel sistema = %lf cust         *\n", utente.lambda / utente.mu);
     printf("*                   Numero medio di pacchetti presenti in coda     = %lf cust         *\n", utente.lambda / utente.mu);
     printf("********************************************************************************************\n");
