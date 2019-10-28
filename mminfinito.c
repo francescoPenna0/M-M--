@@ -38,7 +38,6 @@ float poisson(float mu, float lambda, float stato)
     return nascita;
 }
 
-
 void serviUtenti(Lista *l,FILE *ft)
 {
     
@@ -53,4 +52,10 @@ void stampaLista(Lista l){
         l = l->next;
         } 
         printf("\n");
+}
+
+double tempo_interarrivo(Utente u) {
+
+    return 1 - pow(2.71, -(u.lambda/u.mu));
+
 }
