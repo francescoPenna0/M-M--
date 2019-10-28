@@ -18,8 +18,8 @@ int main(int argc, char const *argv[])
     double avarage;           // tempo medio di tra arrivi
     double tempo_simulazione; // tempo di tutta la simulazione
 
-    clock_t start_ciclo, start_simluzione;
-    clock_t end_ciclo, end_simulazione;
+    clock_t  start_simluzione,start1;
+    clock_t  end_simulazione,end1;
 
     Utente utente;            // struttura dati utente
     Lista l;                  // lista che vuole simulare il sistema
@@ -47,7 +47,6 @@ int main(int argc, char const *argv[])
 
     for (utente.n_utenti = 1; utente.n_utenti < input_utenti + 1; utente.n_utenti++)
     {
-        start_ciclo = clock();                                         // Calcolo tempo di nascita del pacchetto fino alla sua morte.
                                                  
         fprintf(ft, "Utente generato n° %d\n", utente.n_utenti); // GENERO UTENTE
 
@@ -59,17 +58,17 @@ int main(int argc, char const *argv[])
 
         serviUtenti(&l, ft);                                     // servo l'utente e calcolo tempo di servizio
         elimTesta(&l);                                           // il pacchetto muore
+        start1=clock();
         k--;                                                     //il pacchetto muore torno allo stato 0;
 
         fprintf(ft, "Il numero medio di pacchetti presenti nel sistema allo stato k è : %.3f\n", utente.lambda / utente.mu); 
         fprintf(ft, "************************************************************************\n");
+ 
+        end1=clock();                                         // TERMINA VITA DEL PACCHETTO
 
-        end_ciclo = clock();                                           // TERMINA VITA DEL PACCHETTO
-
-        double tempo = ((double)(end_ciclo - start_ciclo)) / CLOCKS_PER_SEC; // calcolo la durata totale della vita del pacchetto
+        double tempo = ((double)(end1 - start1)) / CLOCKS_PER_SEC; // calcolo tempo medio di interarrivo
         tempoTot = tempo + tempoTot;
         avarage = tempoTot / input_utenti;
-
     }
 
     end_simulazione = clock();                                                 //TERMINA LA SIMULAZIONE
