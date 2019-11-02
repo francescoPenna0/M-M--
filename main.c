@@ -42,11 +42,18 @@ int main(int argc, char const *argv[])
     printf("Lambda-->");
     scanf("%f", &utente.lambda);
 
+    if(utente.mu < utente.lambda) {
+
+        printf("Errore nell'inserimento dei dati\n");
+        exit(-1);
+
+    }
+
     ft = fopen("m_m_infinito.txt", "wt"); // apro file in modalità di scrittura
     if (ft == NULL)
     {
         printf("Errore nell'apertura del file\n");
-        exit(-1);
+        exit(-2);
     }
 
     start_simluzione = clock(); // PARTE LA SIMULAZIONE
