@@ -127,7 +127,10 @@ int main(int argc, char const *argv[])
     printf("********************************************************************************************\n");
     printf("*                                       OUTPUTS:                                           *\n");
     printf("*                        Tempo tatole simulato                = %.4f sec                 *\n", tempo_simulazione);
+    if(utente.n_utenti>1)
+    {
     printf("*                        Tempo medio tra gli arrivi           = %lf sec               *\n", tempo_interarrivo_simulato);
+    }
     printf("*                        P(k) definita dalla legge di poisson = %.3f                      *\n", nascita);
     printf("*                        Tempo medio di servizio              = %lf sec               *\n", 1.0 / utente.mu);
     printf("*                        Tempo medio di permanenza in coda    = 0.000 sec                  *\n");
