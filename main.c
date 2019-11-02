@@ -60,7 +60,7 @@ int main(int argc, char const *argv[])
 
     nascita = poisson(utente.mu, utente.lambda, k); // Calcolo la P(k) per dato sperimentale
     nascita = nascita * 100;
-    nascita = (int)nascita;
+    nascita = (float)nascita;
     utente.n_utenti = 0;
 
     do
