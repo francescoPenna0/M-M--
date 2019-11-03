@@ -3,14 +3,13 @@
 #include <time.h>
 #include <math.h>
 
-
 typedef struct utente
 {
     int n_utenti;
     float lambda;
     float mu;
     float tempo_servizio;
-    
+
 } Utente;
 
 typedef struct nodo
@@ -26,6 +25,6 @@ void insTesta(Lista *l, Utente utente);
 void elimTesta(Lista *l);
 int fact(int n);
 float poisson(float mu, float lambda, float stato);
-void serviUtenti(Lista *l,FILE* ft);
+void serviUtenti(Lista *l, FILE *ft);
 void stampaLista(Lista l);
 double tempo_interarrivo(Utente u);

@@ -42,11 +42,11 @@ int main(int argc, char const *argv[])
     printf("Lambda-->");
     scanf("%f", &utente.lambda);
 
-    if(utente.mu < utente.lambda) {
+    if (utente.mu < utente.lambda)
+    {
 
         printf("Errore nell'inserimento dei dati\n");
         exit(-1);
-
     }
 
     ft = fopen("m_m_infinito.txt", "wt"); // apro file in modalità di scrittura
@@ -114,7 +114,7 @@ int main(int argc, char const *argv[])
     fclose(ft); // CHIUDO IL FILE
 
     tempo_simulazione = ((double)(end_simulazione - start_simluzione)) / CLOCKS_PER_SEC; // CALCOLO DURATA DELLA SIMULAZIONE
-    tempo_simulazione += tempoTot; 
+    tempo_simulazione += tempoTot;
 
     printf("********************************************************************************************\n");
     printf("*                        Risultati per una simulazione m/m/inf                             *\n");
@@ -127,9 +127,9 @@ int main(int argc, char const *argv[])
     printf("********************************************************************************************\n");
     printf("*                                       OUTPUTS:                                           *\n");
     printf("*                        Tempo tatole simulato                = %.4f sec                 *\n", tempo_simulazione);
-    if(utente.n_utenti>1)
+    if (utente.n_utenti > 1)
     {
-    printf("*                        Tempo medio tra gli arrivi           = %lf sec               *\n", tempo_interarrivo_simulato);
+        printf("*                        Tempo medio tra gli arrivi           = %lf sec               *\n", tempo_interarrivo_simulato);
     }
     printf("*                        P(k) definita dalla legge di poisson = %.3f                      *\n", nascita);
     printf("*                        Tempo medio di servizio              = %lf sec               *\n", 1.0 / utente.mu);
