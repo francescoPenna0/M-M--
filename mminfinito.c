@@ -1,5 +1,4 @@
 #include "mminfinito.h"
-#include <unistd.h>
 
 void nuovaLista(Lista *l)
 {

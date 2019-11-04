@@ -20,6 +20,7 @@ int main(int argc, char const *argv[])
     double tempo_simulazione = 0;          // tempo di tutta la simulazione
     double tempo_interrarivo_teorico = 0;  // tempo medio di tra arrivi teorico
     double aspetta;
+    
     srand(time(NULL));
 
     clock_t start_simluzione, start1;
