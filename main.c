@@ -1,4 +1,4 @@
-//Simulatore ad eventi di Sistemi a Coda di tipo MMInfinito - Ver. 1.0
+//Simulatore ad eventi di Sistemi a Coda di tipo M/M/∞ - Ver. 1.0
 //Copyright (C) 2019 Alfonso Esposito, Francesco Penna
 
 #include <stdio.h>
@@ -21,16 +21,16 @@ int main(int argc, char const *argv[])
     double tempo_interrarivo_teorico = 0;  // tempo medio di tra arrivi teorico
     double tempo_di_servizio;
     double aspetta;
-
-    srand(time(NULL));
+    double tempo = 0;
 
     clock_t start_simluzione, start1;
     clock_t end_simulazione, end1;
-    double tempo = 0;
 
-    Utente utente;  // struttura dati utente
-    Lista l;        // lista che vuole simulare ls coda
-    FILE *ft;       // file dove salvare i dati del processo
+    Utente utente;                         // struttura dati utente
+    Lista l;                               // lista che vuole simulare ls coda
+    FILE *ft;                              // file dove salvare i dati del processo
+
+    srand(time(NULL));                     // genero ogni volta numeri semi-casuali
 
     nuovaLista(&l); // inizializzazione lista
 
@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
 
     }
 
-    ft = fopen("m_m_infinito.txt", "wt");           // apro file in modalità di scrittura
+    ft = fopen("m_m_infinito.txt", "wt");           // Apertura del file in modalità di scrittura
     if (ft == NULL)
     {
         printf("Errore nell'apertura del file\n");
