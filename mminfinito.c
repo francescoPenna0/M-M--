@@ -50,13 +50,3 @@ void serviUtenti(Lista *l, FILE *ft)
     (*l)->dato.tempo_servizio = 1.0 / (*l)->dato.mu;
     fprintf(ft, "Tempo di servizio: %.3f\n", (*l)->dato.tempo_servizio);
 }
-
-void stampaLista(Lista l)
-{
-    while (l)
-    {
-        printf("%d %.3f %.3f %.3f\n", l->dato.n_utenti, l->dato.mu, l->dato.lambda, l->dato.tempo_servizio);
-        l = l->next;
-    }
-    printf("\n");
-}

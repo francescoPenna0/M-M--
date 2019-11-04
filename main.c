@@ -19,17 +19,18 @@ int main(int argc, char const *argv[])
     double tempo_interarrivo_simulato = 0; // tempo medio di tra arrivi simulato
     double tempo_simulazione = 0;          // tempo di tutta la simulazione
     double tempo_interrarivo_teorico = 0;  // tempo medio di tra arrivi teorico
+    double tempo_di_servizio;
     double aspetta;
-    
+
     srand(time(NULL));
 
     clock_t start_simluzione, start1;
     clock_t end_simulazione, end1;
     double tempo = 0;
 
-    Utente utente; // struttura dati utente
-    Lista l;       // lista che vuole simulare ls coda
-    FILE *ft;      // file dove salvare i dati del processo
+    Utente utente;  // struttura dati utente
+    Lista l;        // lista che vuole simulare ls coda
+    FILE *ft;       // file dove salvare i dati del processo
 
     nuovaLista(&l); // inizializzazione lista
 
@@ -79,7 +80,7 @@ int main(int argc, char const *argv[])
         if (nascita > confronto)
         {
 
-            fprintf(ft, "Utente generato n° %d\n", utente.n_utenti); // GENERO UTENTE
+            fprintf(ft, "Utente generato n° %d\n", utente.n_utenti); // Generazione Utente
 
             insTesta(&l, utente);                                    // Inserisco pacchetto in coda
 
@@ -88,6 +89,7 @@ int main(int argc, char const *argv[])
             fprintf(ft, "P(k) definita dalla legge di poisson è : %.3f\n", nascita);
 
             serviUtenti(&l, ft);                                     // Servo l'utente e calcolo tempo di servizio
+            tempo_di_servizio = (1 / utente.mu);
             elimTesta(&l);                                           // Il pacchetto muore
 
             start1 = clock();
@@ -102,14 +104,14 @@ int main(int argc, char const *argv[])
 
             tempo = ((double)(end1 - start1)) / CLOCKS_PER_SEC;      // Calcolo tempo medio di interarrivo
             tempo += aspetta;
-            tempoTot = tempo + tempoTot;
+            tempoTot = tempo + tempo_di_servizio + tempoTot;
 
             utente.n_utenti++;
         }
 
-    } while (utente.n_utenti < input_utenti + 1);
+    } while (utente.n_utenti <= input_utenti);
 
-    tempo_interarrivo_simulato = (double)tempoTot;
+    tempo_interarrivo_simulato = (double)tempo;
     tempo_interrarivo_teorico = tempo_interarrivo(utente);
 
     end_simulazione = clock(); // TERMINA LA SIMULAZIONE
@@ -117,6 +119,7 @@ int main(int argc, char const *argv[])
     fclose(ft);                // Chiudo il file
 
     tempo_simulazione = ((double)(end_simulazione - start_simluzione)) / CLOCKS_PER_SEC; // Calcolo durata simulazione
+    tempo_simulazione += tempoTot;
 
     printf("********************************************************************************************\n");
     printf("                         Risultati per una simulazione m/m/inf                              \n");
@@ -131,7 +134,7 @@ int main(int argc, char const *argv[])
     printf("                         Tempo tatole simulato                = %.4f sec                  \n", tempo_simulazione);
     if (input_utenti > 1)
     {
-        printf("                         Tempo medio tra gli arrivi           = %lf sec                \n", tempo_interarrivo_simulato / (double)input_utenti);
+        printf("                         Tempo medio tra gli arrivi           = %lf sec                \n", tempo);
     }
     printf("                         P(k) definita dalla legge di poisson = %.3f                       \n", nascita / 100);
     if (input_utenti > 0) 

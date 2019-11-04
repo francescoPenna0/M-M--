@@ -26,5 +26,4 @@ void elimTesta(Lista *l);
 int fact(int n);
 float poisson(float mu, float lambda, float stato);
 void serviUtenti(Lista *l, FILE *ft);
-void stampaLista(Lista l);
 double tempo_interarrivo(Utente u);
