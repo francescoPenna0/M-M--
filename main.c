@@ -45,8 +45,8 @@ int main(int argc, char const *argv[])
     if (utente.mu < utente.lambda)
     {
 
-        printf("Errore nell'inserimento dei dati\n");
-        exit(-1);
+        printf("\nWarning: il sistema potrebbe essere instabile.\n");
+        printf("\n");
 
     }
 
@@ -57,7 +57,7 @@ int main(int argc, char const *argv[])
 
     }
 
-    ft = fopen("m_m_infinito.txt", "wt");                                            // apro file in modalità di scrittura
+    ft = fopen("m_m_infinito.txt", "wt");           // apro file in modalità di scrittura
     if (ft == NULL)
     {
         printf("Errore nell'apertura del file\n");
@@ -139,7 +139,7 @@ int main(int argc, char const *argv[])
     }
     printf("                         Tempo medio di permanenza in coda    = 0.000 sec                   \n");
     printf("********************************************************************************************\n");
-    printf("                                       DATI TEORICI:                                        \n");
+    printf("                                      DATI TEORICI:                                         \n");
     printf("                    Tempo di interarrivo teorico                   = %lf               \n", tempo_interrarivo_teorico);
     printf("                    Numero medio di pacchetti presenti nel sistema = %lf cust          \n", utente.lambda / utente.mu);
     printf("                    Numero medio di pacchetti presenti in coda     = %lf cust          \n", utente.lambda / utente.mu);
