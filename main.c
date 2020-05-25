@@ -1,5 +1,5 @@
-//Simulatore ad eventi di Sistemi a Coda di tipo M/M/∞ - Ver. 1.0
-//Copyright (C) 2019 Alfonso Esposito, Francesco Penna
+// Simulatore ad eventi di Sistemi a Coda di tipo M/M/∞ - Ver. 1.0
+// Copyright © 2019 Alfonso Esposito, Francesco Penna
 
 #include <stdio.h>
 #include <stdlib.h>
